@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jakub Kaźmierczak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Jakub Kaźmierczak</h1>
+        <br>
+        <nav>
+            <a href="#about">O mnie</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#skills">Umiejętności</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>O mnie</h2>
+        <p>
+            Jestem absolwentem studiów licencjackich na kierunku informatyka ze specjalizacją grafika i projektowanie
+            gier. Obecnie kontynuuję naukę na studiach magisterskich na tym samym kierunku. Od zawsze pasjonowały mnie
+            gry komputerowe – najpierw jako gracza, a później jako twórcę. Zafascynowany procesem ich powstawania,
+            postanowiłem rozwijać się w tym obszarze zarówno teoretycznie, jak i praktycznie.
+        </p>
+        <p>
+            Poza projektowaniem gier interesuję się również technologią i sprzętem komputerowym. Posiadam solidną wiedzę
+            z zakresu budowy i konfiguracji komputerów, a także bieżących trendów sprzętowych i nowinek
+            technologicznych.
+        </p>
+        <p>
+            Dysponuję również wydajnym zestawem komputerowym, który pozwala mi na komfortową pracę zdalną przy
+            wymagających projektach:
+        </p>
+        <ul>
+
+            <li><b>GPU:</b> Radeon RX 7900 XT Asus Prime OC</li>
+            <li><b>CPU:</b> Intel Core i9-14900KF</li>
+            <li><b>Chłodzenie:</b> Cooler Master MasterLiquid ML360 Illusion</li>
+            <li><b>RAM:</b> Goodram IRDM 32 GB DDR5 6000 MHz</li>
+            <li><b>Płyta główna:</b> Gigabyte Z790 Aorus Elite X WiFi</li>
+            <li><b>Dysk SSD:</b> Lexar NM790 2 TB</li>
+            <li><b>Zasilacz:</b> MSI MPG A1000G 1000 W</li>
+            <li><b>Obudowa:</b> Lian Li PC-O11DX</li>
+            <li><b>Wentylacja:</b> 6× Cooler Master MasterFan MF120 Halo ARGB</li>
+            <li><b>System operacyjny:</b> Windows 11 Pro</li>
+        </ul>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+
+        <div class="project">
+            <div class="project-images">
+                <div class="slideshow-container" id="slideshow-1">
+                    <div class="mySlides-1 fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides-1 fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides-1 fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot-1" onclick="currentSlide(1, 1)"></span>
+                    <span class="dot-1" onclick="currentSlide(2, 1)"></span>
+                    <span class="dot-1" onclick="currentSlide(3, 1)"></span>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Kotlyn the Slayer</h3>
+                <p>Przygodowa gra w pikselowym stylu tworzona w Unity. Dużo bazowych elementów zostało już utworzonych,
+                    dzięki czemu po narysowaniu nowych grafik można łatwo dodać do gry nowe rzeczy. W projekcie zajmuję
+                    się wszystkim po kolei - od programowania przeciwników, przez rysowanie sprite'ów, aż po design
+                    planszy. Celem jest zrobienie gotowego produktu, który będziemy mogli wrzucić na Steam.</p>
+                <p>Współautor: <a href="https://github.com/MechanicalBuns">MechanicalBuns</a></p>
+            </div>
+        </div>
+
+        <div class="project reverse">
+            <div class="project-images">
+                <div class="slideshow-container" id="slideshow-2">
+                    <div class="mySlides-2 fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides-2 fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides-2 fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot-2" onclick="currentSlide(1, 2)"></span>
+                    <span class="dot-2" onclick="currentSlide(2, 2)"></span>
+                    <span class="dot-2" onclick="currentSlide(3, 2)"></span>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Creepy Trials</h3>
+                <p>Gra starająca się imitować horror tworzona w Unity. Ten projekt był po części realizowany jako
+                    projekt na studia, lecz mocno przekroczył on jego wymagania, ponieważ chciałem zrobić coś ciekawego.
+                    Obecny prototyp jest grywalny przez itch.io ale jestem w trakcie przebudowy gry, rozdzielając
+                    poszczególne poziomy na osobne części, dopracowywjąc przy tym każdą z nich.</p>
+                <p>Demo jest grywalne <a href="https://veyroz.itch.io/creepy-trials">tutaj</a>.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-images">
+                <div class="slideshow-container" id="slideshow-3">
+                    <div class="mySlides-3 fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="img/grandparents1.png" style="width:100%">
+                    </div>
+                    <div class="mySlides-3 fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="img/grandparents2.png" style="width:100%">
+                    </div>
+                    <div class="mySlides-3 fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="img/grandparents3.png" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot-3" onclick="currentSlide(1, 3)"></span>
+                    <span class="dot-3" onclick="currentSlide(2, 3)"></span>
+                    <span class="dot-3" onclick="currentSlide(3, 3)"></span>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Dark Everywhere, Deaf Everywhere</h3>
+                <p>Przygodowa gra horror z elementami łamigłówkowymi, utworzona w Unity. Mimo ograniczonej ilości czasu
+                    staraliśmy się zrobić co się dało żeby nadać grze klimatu i odpowiedniej atmosfery. W przyszłości
+                    planujemy poprawić modele obiektów aby zoptymalizować działanie gry, wprowadzić animacje
+                    proceduralne oraz rozbudować gameplay. W projekcie zająłem się programowaniem i w mniejszej mierze
+                    projektowaniem modeli.</p>
+                <p>Współautor: <a href="https://github.com/MechanicalBuns">MechanicalBuns</a></p>
+            </div>
+        </div>
+
+        <div class="project reverse">
+            <div class="project-images">
+                <div class="slideshow-container" id="slideshow-4">
+                    <div class="mySlides-4 fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="img/catgame1.png" style="width:100%">
+                    </div>
+                    <div class="mySlides-4 fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="img/catgame2.png" style="width:100%">
+                    </div>
+                    <div class="mySlides-4 fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="img/catgame3.png" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot-4" onclick="currentSlide(1, 4)"></span>
+                    <span class="dot-4" onclick="currentSlide(2, 4)"></span>
+                    <span class="dot-4" onclick="currentSlide(3, 4)"></span>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Cat Game</h3>
+                <p>Prosta, krótka gra polegająca na zebraniu monet grając kotkiem. Stworzona w Unity jako prezent dla
+                    bliskiej osoby. Wszystko poza muzyką zrobiłem samodzielnie. Zastanawiam się nad rozwinięciem
+                    projektu żeby powstała z niego gra na troszkę większą skalę.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-images">
+                <div class="slideshow-container" id="slideshow-5">
+                    <div class="mySlides-5 fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides-5 fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides-5 fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="img/placeholder.jpg" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot-5" onclick="currentSlide(1, 5)"></span>
+                    <span class="dot-5" onclick="currentSlide(2, 5)"></span>
+                    <span class="dot-5" onclick="currentSlide(3, 5)"></span>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Ben 10 Game</h3>
+                <p>Demo gry, które było projektem do mojej pracy licencjackiej. Wszystkie elementy wykonałem
+                    samodzielnie. Celem projektu było przedstawienie różnych sposobów transformacji postaci w czasie
+                    rzeczywistym. Niestety w przypadku tego projektu mam związane ręce jeśli chodzi o rozwój ze względu
+                    na prawa autorskie.</p>
+
+            </div>
+        </div>
+
+        <div class="project reverse">
+            <div class="project-images">
+                <div class="slideshow-container" id="slideshow-6">
+                    <div class="mySlides-6 fade">
+                        <div class="numbertext">1 / 2</div>
+                        <img src="img/tetris1.png" style="width:100%">
+                    </div>
+                    <div class="mySlides-6 fade">
+                        <div class="numbertext">2 / 2</div>
+                        <img src="img/tetris2.png" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 6)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 6)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot-6" onclick="currentSlide(1, 6)"></span>
+                    <span class="dot-6" onclick="currentSlide(2, 6)"></span>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Tetris 3D</h3>
+                <p>Tetris 3D wykonany w javascript używając biblioteki three.js. Modele klocków jak i cały kod są
+                    zrobione przeze mnie. Na obecnym etapie projektu, da się jedynie układać klocki, a obracanie i
+                    kasowanie wierszy dodam w przyszłości.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-images">
+                <img src="img/pozytywka.png" style="width:100%">
+            </div>
+            <div class="project-text">
+                <h3>Animacja pozytywki</h3>
+                <p>Animacja wykonana w Blenderze. Można ją zobaczyć <a
+                        href="https://drive.google.com/file/d/17x3tVKtUdOIXvxjDhs-H-1up3WzCWrGk/view?">tutaj</a>.</p>
+
+            </div>
+        </div>
+
+        <div class="project reverse">
+            <div class="project-images">
+                <div class="slideshow-container" id="slideshow-7">
+                    <div class="mySlides-7 fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="img/passat1.png" style="width:100%">
+                    </div>
+                    <div class="mySlides-7 fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="img/passat2.png" style="width:100%">
+                    </div>
+                    <div class="mySlides-7 fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="img/passat3.png" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 7)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 7)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot-7" onclick="currentSlide(1, 7)"></span>
+                    <span class="dot-7" onclick="currentSlide(2, 7)"></span>
+                    <span class="dot-7" onclick="currentSlide(3, 7)"></span>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Model 3D auta</h3>
+                <p>Model samochodu Volkswagen Passat wykonany samodzielnie w Blenderze. W wolnej chwili chciałbym do
+                    niego wrócić i poprawić parę mankamentów oraz zrobić wnętrze.</p>
+            </div>
+        </div>
+
+        <div class="project-centered">
+
+            <div class="project-centered-text">
+                <h3>Inne mniejsze projekty</h3>
+
+                <p>Na swoim GitHubie posiadam również parę mniejszych projektów, głównie algorytmów zrobionych na
+                    potrzeby zajęć.</p>
+
+                <div class="project-centered-list">
+
+                    <ul>
+                        <li><a href="https://github.com/v3yroz/Java-Game-Loop-using-delta">Java Game Loop using
+                                delta</a> - pętla gry użyta na potrzeby pierwszej wersji gry Kotlyn the Slayer.</li>
+                        <li><a href="https://github.com/v3yroz/Hash-Dictionaries-in-Cpp">Hash Dictionaries in cpp</a> -
+                            Słowniki haszujące w C++.</li>
+                        <li><a href="https://github.com/v3yroz/Longest-common-subsequence-in-Cpp">Longest common
+                                subsequence in cpp</a> -
+                            Algorytm szukający najdłuższego wspólnego podciągu znaków w C++.</li>
+                        <li><a href="https://github.com/v3yroz/Floyd-Warshall-algorithm-in-Cpp">Floyd Warshall algorithm
+                                in cpp</a> -
+                            Algorytm Floyda-Warshalla w C++.</li>
+                        <li><a href="https://github.com/v3yroz/Prim-s-Minimum-Spanning-Tree-algorithm-in-cpp">Primms
+                                Minimum Spanning Tree algorithm in cpp</a> -
+                            Algorytm Primma szukający najmniejszego drzewa rozpinającego w C++.</li>
+                        <li><a href="https://github.com/v3yroz/Hex-map">Hex map</a> -
+                            Projekt mapy heksagonalnej w Unity, uwzględniający współrzędne każdego kafelka.</li>
+                        <li><a href="https://github.com/v3yroz/Astar">Astar</a> -
+                            Projekt Unity polegający na algorytmie A* połączonym z generatorem świata na bazie szumu
+                            Perlina.</li>
+                        <li><a href="https://github.com/v3yroz/Moore">Moore</a> -
+                            Próba wykonania automatu Moore'a, lecz nie spełnia jeszcze wszystkich założeń.</li>
+                        <li><a href="https://github.com/v3yroz/RandomTerrain">Random Terrain</a> -
+                            Całkowicie losowy generator terenu w Unity.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section id="skills">
+        <h2>Umiejętności</h2>
+        <p>Posiadam zdolność analitycznego myślenia, podczas tworzenia projektów potrafię przewidzieć jakie rozwiązania
+            wydają się dobre jedynie na obecnym etapie, a w późniejszych okażą się nieoptymalne. Jestem otwarty na nowe
+            rozwiązania i z wielką chęcią chciałbym poznać ich jak najwięcej.</p>
+        <p>Programowanie</p>
+        <ul>
+            <li>C++ - znam składnię i potrafię zrozumieć kod, przeanalizować go i zaproponować poprawki.</li>
+            <li>C# - używałem podczas pisania skryptów do gier w Unity. Mój ulubiony język i znam go dość dobrze.</li>
+            <li>Java - użyłem podczas robienia pierwszej gry (na bibliotekach domyślnych oraz z wykorzystaniem LibGDX).
+            </li>
+            <li>javascript - nauczyłem się podstaw podczas tworzenia Tetrisa. Znam składnię i specyfikę działania.
+            </li>
+        </ul>
+
+        <p>Inne</p>
+        <ul>
+            <li>Znam składnię HTML oraz CSS i potrafię stworzyć prostą stronę internetową.</li>
+            <li>Znam składnię SQL i potrafię zaprojektować bazę danych, utworzyć ją i dokonywać podstawowych operacji.
+            </li>
+            <li>Korzystałem ze środowisk takich jak: IntelliJ Idea, Visual Studio, Visual Studio Code, Unity,
+                Code::Blocks.</li>
+            <li>Potrafię obsługiwać programy: Blender, Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro, AutoCAD,
+                Adobe After Effects.</li>
+            <li>Znam podstawy działania sieci. Umiem zaplanować i utworzyć prostą sieć.</li>
+            <li>Posiadam umiejętności techniczne, np. złożenie komputera, wymiana części, zmiana pasty
+                termoprzewodzącej. Rozbierałem komputery, laptopy, telefony, a nawet karty graficzne. Potrafię dobrać
+                odpowiednie części komputerowe w zależności od potrzeb i jestem na bieżąco z nowymi technologiami.
+                Konstruowałem proste układy Arduino i je programowałem.</li>
+            <li>Posługuję się biegle językiem angielskim.</li>
+            <li>Posiadam prawo jazdy kategorii B oraz samochód.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>E-mail: <a href="mailto:jakubkazm01@gmail.com">jakubkazm01@gmail.com</a></p>
+        <p>Telefon kontaktowy: <a href="tel:788-808-756">788 808 756</a></p>
+        <p><a href="https://github.com/v3yroz" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
