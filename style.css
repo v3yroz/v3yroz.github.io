@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Michroma', sans-serif;
     background-color: #111;
     color: #eee;
 }
@@ -27,7 +27,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Michroma', sans-serif;
     font-size: 3rem;
     color: #f700ffaa;
     letter-spacing: 2px;
@@ -77,7 +77,7 @@ section {
 }
 
 h2 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Michroma', sans-serif;
     border-left: 4px solid #f700ffaa;
     padding-left: 1rem;
 }
@@ -134,7 +134,7 @@ h2 {
 
 .project-text h3 {
     color: #f700ffaa;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Michroma', sans-serif;
 }
 
 .project-centered {
@@ -155,7 +155,7 @@ h2 {
 
 .project-centered-text h3 {
     color: #f700ffaa;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Michroma', sans-serif;
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
