@@ -1,433 +1,489 @@
 <!DOCTYPE html>
-<html lang="pl">
-
+<html lang="pl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jakub Kaźmierczak</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        card: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .text-gradient {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .carousel-snap { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .carousel-item { scroll-snap-align: center; }
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
-    <header>
-        <h1>Jakub Kaźmierczak</h1>
-        <br>
-        <nav>
-            <a href="#about">O mnie</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#skills">Umiejętności</a>
-        </nav>
-    </header>
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl tracking-wider text-white">
+                    JK<span class="text-blue-500">.</span>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#info" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Info</a>
+                        <a href="#education" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Wykształcenie</a>
+                        <a href="#projects" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Projekty</a>
+                        <a href="#contact" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Kontakt</a>
 
-    <section id="about">
-        <h2>O mnie</h2>
-        <p>
-            Jestem absolwentem studiów licencjackich na kierunku informatyka ze specjalizacją grafika i projektowanie
-            gier. Obecnie kontynuuję naukę na studiach magisterskich na tym samym kierunku. Od zawsze pasjonowały mnie
-            gry komputerowe – najpierw jako gracza, a później jako twórcę. Zafascynowany procesem ich powstawania,
-            postanowiłem rozwijać się w tym obszarze zarówno teoretycznie, jak i praktycznie.
-        </p>
-        <p>
-            Poza projektowaniem gier interesuję się również technologią i sprzętem komputerowym. Posiadam solidną wiedzę
-            z zakresu budowy i konfiguracji komputerów, a także bieżących trendów sprzętowych i nowinek
-            technologicznych.
-        </p>
-        <p>
-            Dysponuję również wydajnym zestawem komputerowym, który pozwala mi na komfortową pracę zdalną przy
-            wymagających projektach:
-        </p>
-        <ul>
+                        <a href="index_en.html" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs font-bold transition-colors ml-4 w-12 text-center inline-block">EN</a>
+                    </div>
+                </div>
 
-            <li><b>GPU:</b> AMD Radeon RX 9070 XT Asus Prime OC</li>
-            <li><b>CPU:</b> Intel Core i9-14900KF</li>
-            <li><b>Chłodzenie:</b> Cooler Master MasterLiquid ML360 Illusion</li>
-            <li><b>RAM:</b> Goodram IRDM 32 GB DDR5 6000 MHz</li>
-            <li><b>Płyta główna:</b> Gigabyte Z790 Aorus Elite X WiFi</li>
-            <li><b>Dysk SSD:</b> Lexar NM790 2 TB</li>
-            <li><b>Zasilacz:</b> MSI MPG A1000G 1000 W</li>
-            <li><b>Obudowa:</b> Lian Li PC-O11DX</li>
-            <li><b>Wentylacja:</b> 6× Cooler Master MasterFan MF120 Halo ARGB</li>
-            <li><b>System operacyjny:</b> Windows 11 Pro</li>
-        </ul>
+                <div class="-mr-2 flex md:hidden gap-4 items-center">
+                    <a href="index_en.html" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs font-bold transition-colors w-12 text-center">EN</a>
+                    <button onclick="toggleMobileMenu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden bg-slate-900 border-b border-gray-700" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#info" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Info</a>
+                <a href="#education" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Wykształcenie</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projekty</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="text-center px-4 reveal active">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight">
+                <span class="text-gradient">Jakub Kaźmierczak</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                Solo Game Dev & Designer pasjonujący się poznawaniem nowych rozwiązań.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
+                    Zobacz projekty
+                </a>
+                <a href="#contact" class="bg-transparent border border-gray-500 hover:border-white text-gray-300 hover:text-white font-bold py-3 px-8 rounded-full transition-all hover:bg-white/5">
+                    Kontakt
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
     </section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-
-        <div class="project">
-            <div class="project-images">
-                <div class="slideshow-container" id="slideshow-1">
-                    <div class="mySlides-1 fade">
-                        <div class="numbertext">1 / 6</div>
-                        <img src="img/kotlyn1.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-1 fade">
-                        <div class="numbertext">2 / 6</div>
-                        <img src="img/kotlyn2.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-1 fade">
-                        <div class="numbertext">3 / 6</div>
-                        <img src="img/kotlyn3.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-1 fade">
-                        <div class="numbertext">4 / 6</div>
-                        <img src="img/kotlyn4.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-1 fade">
-                        <div class="numbertext">5 / 6</div>
-                        <img src="img/kotlyn5.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-1 fade">
-                        <div class="numbertext">6 / 6</div>
-                        <img src="img/kotlyn6.png" style="width:100%">
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+    <section id="info" class="py-20 bg-darker">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 flex items-center justify-center gap-3">
+                    <i class="fas fa-user text-blue-500 text-2xl"></i> 
+                    <span>O mnie</span>
+                </h2>
+                <div class="text-center">
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Jestem pasjonatem technologii z kilkuletnim doświadczeniem w tworzeniu gier komputerowych. Moja przygoda z programowaniem zaczęła się od prostych projektów, a obecnie rozwijam się poznając coraz to nowsze rozwiązania.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Gdy nie koduję, interesuję się sprzętem komputerowym oraz nowinkami ze świata technologii. Jestem zwolennikiem czystego i przejrzystego kodu. Posiadam również mocno rozwinięte umiejętności techniczne.
+                    </p>
                 </div>
-                <br>
-                <div style="text-align:center">
-                    <span class="dot-1" onclick="currentSlide(1, 1)"></span>
-                    <span class="dot-1" onclick="currentSlide(2, 1)"></span>
-                    <span class="dot-1" onclick="currentSlide(3, 1)"></span>
-                    <span class="dot-1" onclick="currentSlide(4, 1)"></span>
-                    <span class="dot-1" onclick="currentSlide(5, 1)"></span>
-                    <span class="dot-1" onclick="currentSlide(6, 1)"></span>
-                </div>
-            </div>
-            <div class="project-text">
-                <h3>Kotlyn the Slayer</h3>
-                <p>Przygodowa gra w pikselowym stylu tworzona w Unity. Dużo bazowych elementów zostało już utworzonych,
-                    dzięki czemu po narysowaniu nowych grafik można łatwo dodać do gry nowe rzeczy. W projekcie zajmuję
-                    się wszystkim po kolei - od programowania przeciwników, przez rysowanie sprite'ów, aż po design
-                    planszy. Celem jest zrobienie gotowego produktu, który będziemy mogli wrzucić na Steam.</p>
-                <p>Współautor: <a href="https://github.com/MechanicalBuns">MechanicalBuns</a></p>
-            </div>
-        </div>
 
-        <div class="project reverse">
-            <div class="project-images">
-                <div class="slideshow-container" id="slideshow-2">
-                    <div class="mySlides-2 fade">
-                        <div class="numbertext">1 / 4</div>
-                        <img src="img/creepytrials1.png" style="width:100%">
+                <div class="mt-12 bg-card p-8 rounded-2xl border border-gray-700 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i class="fas fa-microchip text-9xl text-white"></i>
                     </div>
-                    <div class="mySlides-2 fade">
-                        <div class="numbertext">2 / 4</div>
-                        <img src="img/creepytrials2.png" style="width:100%">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2 relative z-10">
+                        <i class="fas fa-desktop text-blue-500"></i>
+                        <span>Mój komputer (Specyfikacja)</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10 font-mono text-sm">
+                        <div class="flex items-center gap-3 p-3 bg-darker/50 rounded-lg">
+                            <i class="fas fa-microchip text-gray-500"></i>
+                            <div>
+                                <span class="block text-gray-500 text-xs">CPU</span>
+                                <span class="text-blue-300">Intel Core i9-14900KF</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-darker/50 rounded-lg">
+                            <i class="fas fa-memory text-gray-500"></i>
+                            <div>
+                                <span class="block text-gray-500 text-xs">GPU</span>
+                                <span class="text-blue-300">NVIDIA GeForce RTX 5080</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-darker/50 rounded-lg">
+                            <i class="fas fa-database text-gray-500"></i>
+                            <div>
+                                <span class="block text-gray-500 text-xs">RAM</span>
+                                <span class="text-blue-300">32GB DDR5 6000MHz</span>
+                            </div>
+                        </div>
+                         <div class="flex items-center gap-3 p-3 bg-darker/50 rounded-lg">
+                            <i class="fas fa-hdd text-gray-500"></i>
+                            <div>
+                                <span class="block text-gray-500 text-xs">Storage</span>
+                                <span class="text-blue-300">2TB NVMe Gen4 SSD</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mySlides-2 fade">
-                        <div class="numbertext">3 / 4</div>
-                        <img src="img/creepytrials3.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-2 fade">
-                        <div class="numbertext">4 / 4</div>
-                        <img src="img/creepytrials4.png" style="width:100%">
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                    <span class="dot-2" onclick="currentSlide(1, 2)"></span>
-                    <span class="dot-2" onclick="currentSlide(2, 2)"></span>
-                    <span class="dot-2" onclick="currentSlide(3, 2)"></span>
-                    <span class="dot-2" onclick="currentSlide(4, 2)"></span>
-                </div>
-            </div>
-            <div class="project-text">
-                <h3>Creepy Trials</h3>
-                <p>Gra starająca się imitować horror tworzona w Unity. Ten projekt był po części realizowany jako
-                    projekt na studia, lecz mocno przekroczył on jego wymagania, ponieważ chciałem zrobić coś ciekawego.
-                    Obecny prototyp jest grywalny przez itch.io ale jestem w trakcie przebudowy gry, rozdzielając
-                    poszczególne poziomy na osobne części, dopracowywjąc przy tym każdą z nich.</p>
-                <p>Demo jest grywalne <a href="https://veyroz.itch.io/creepy-trials">tutaj</a>.</p>
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-images">
-                <div class="slideshow-container" id="slideshow-3">
-                    <div class="mySlides-3 fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img/grandparents1.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-3 fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img/grandparents2.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-3 fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img/grandparents3.png" style="width:100%">
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                    <span class="dot-3" onclick="currentSlide(1, 3)"></span>
-                    <span class="dot-3" onclick="currentSlide(2, 3)"></span>
-                    <span class="dot-3" onclick="currentSlide(3, 3)"></span>
-                </div>
-            </div>
-            <div class="project-text">
-                <h3>Dark Everywhere, Deaf Everywhere</h3>
-                <p>Przygodowa gra horror z elementami łamigłówkowymi, utworzona w Unity. Mimo ograniczonej ilości czasu
-                    staraliśmy się zrobić co się dało żeby nadać grze klimatu i odpowiedniej atmosfery. W przyszłości
-                    planujemy poprawić modele obiektów aby zoptymalizować działanie gry, wprowadzić animacje
-                    proceduralne oraz rozbudować gameplay. W projekcie zająłem się programowaniem i w mniejszej mierze
-                    projektowaniem modeli.</p>
-                <p>Współautor: <a href="https://github.com/MechanicalBuns">MechanicalBuns</a></p>
-            </div>
-        </div>
-
-        <div class="project reverse">
-            <div class="project-images">
-                <div class="slideshow-container" id="slideshow-4">
-                    <div class="mySlides-4 fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img/catgame1.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-4 fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img/catgame2.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-4 fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img/catgame3.png" style="width:100%">
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                    <span class="dot-4" onclick="currentSlide(1, 4)"></span>
-                    <span class="dot-4" onclick="currentSlide(2, 4)"></span>
-                    <span class="dot-4" onclick="currentSlide(3, 4)"></span>
-                </div>
-            </div>
-            <div class="project-text">
-                <h3>Cat Game</h3>
-                <p>Prosta, krótka gra polegająca na zebraniu monet grając kotkiem. Stworzona w Unity jako prezent dla
-                    bliskiej osoby. Wszystko poza muzyką zrobiłem samodzielnie. Zastanawiam się nad rozwinięciem
-                    projektu żeby powstała z niego gra na troszkę większą skalę.</p>
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-images">
-                <div class="slideshow-container" id="slideshow-5">
-                    <div class="mySlides-5 fade">
-                        <div class="numbertext">1 / 6</div>
-                        <img src="img/ben1.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-5 fade">
-                        <div class="numbertext">2 / 6</div>
-                        <img src="img/ben2.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-5 fade">
-                        <div class="numbertext">3 / 6</div>
-                        <img src="img/ben3.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-5 fade">
-                        <div class="numbertext">4 / 6</div>
-                        <img src="img/ben4.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-5 fade">
-                        <div class="numbertext">5 / 6</div>
-                        <img src="img/ben5.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-5 fade">
-                        <div class="numbertext">6 / 6</div>
-                        <img src="img/ben6.png" style="width:100%">
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                    <span class="dot-5" onclick="currentSlide(1, 5)"></span>
-                    <span class="dot-5" onclick="currentSlide(2, 5)"></span>
-                    <span class="dot-5" onclick="currentSlide(3, 5)"></span>
-                    <span class="dot-5" onclick="currentSlide(4, 5)"></span>
-                    <span class="dot-5" onclick="currentSlide(5, 5)"></span>
-                    <span class="dot-5" onclick="currentSlide(6, 5)"></span>
-                </div>
-            </div>
-            <div class="project-text">
-                <h3>Ben 10 Game</h3>
-                <p>Demo gry, które było projektem do mojej pracy licencjackiej. Wszystkie elementy wykonałem
-                    samodzielnie. Celem projektu było przedstawienie różnych sposobów transformacji postaci w czasie
-                    rzeczywistym. Niestety w przypadku tego projektu mam związane ręce jeśli chodzi o rozwój ze względu
-                    na prawa autorskie.</p>
-
-            </div>
-        </div>
-
-        <div class="project reverse">
-            <div class="project-images">
-                <div class="slideshow-container" id="slideshow-6">
-                    <div class="mySlides-6 fade">
-                        <div class="numbertext">1 / 2</div>
-                        <img src="img/tetris1.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-6 fade">
-                        <div class="numbertext">2 / 2</div>
-                        <img src="img/tetris2.png" style="width:100%">
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1, 6)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 6)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                    <span class="dot-6" onclick="currentSlide(1, 6)"></span>
-                    <span class="dot-6" onclick="currentSlide(2, 6)"></span>
-                </div>
-            </div>
-            <div class="project-text">
-                <h3>Tetris 3D</h3>
-                <p>Tetris 3D wykonany w javascript używając biblioteki three.js. Modele klocków jak i cały kod są
-                    zrobione przeze mnie. Na obecnym etapie projektu, da się jedynie układać klocki, a obracanie i
-                    kasowanie wierszy dodam w przyszłości.</p>
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-images">
-                <img src="img/pozytywka.png" style="width:100%">
-            </div>
-            <div class="project-text">
-                <h3>Animacja pozytywki</h3>
-                <p>Animacja wykonana w Blenderze. Można ją zobaczyć <a
-                        href="https://drive.google.com/file/d/17x3tVKtUdOIXvxjDhs-H-1up3WzCWrGk/view?">tutaj</a>.</p>
-
-            </div>
-        </div>
-
-        <div class="project reverse">
-            <div class="project-images">
-                <div class="slideshow-container" id="slideshow-7">
-                    <div class="mySlides-7 fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="img/passat1.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-7 fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="img/passat2.png" style="width:100%">
-                    </div>
-                    <div class="mySlides-7 fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="img/passat3.png" style="width:100%">
-                    </div>
-
-                    <a class="prev" onclick="plusSlides(-1, 7)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 7)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                    <span class="dot-7" onclick="currentSlide(1, 7)"></span>
-                    <span class="dot-7" onclick="currentSlide(2, 7)"></span>
-                    <span class="dot-7" onclick="currentSlide(3, 7)"></span>
-                </div>
-            </div>
-            <div class="project-text">
-                <h3>Model 3D auta</h3>
-                <p>Model samochodu Volkswagen Passat wykonany samodzielnie w Blenderze. W wolnej chwili chciałbym do
-                    niego wrócić i poprawić parę mankamentów oraz zrobić wnętrze.</p>
-            </div>
-        </div>
-
-        <div class="project-centered">
-
-            <div class="project-centered-text">
-                <h3>Inne mniejsze projekty</h3>
-
-                <p>Na swoim GitHubie posiadam również parę mniejszych projektów, głównie algorytmów zrobionych na
-                    potrzeby zajęć.</p>
-
-                <div class="project-centered-list">
-
-                    <ul>
-                        <li><a href="https://github.com/v3yroz/Java-Game-Loop-using-delta">Java Game Loop using
-                                delta</a> - pętla gry użyta na potrzeby pierwszej wersji gry Kotlyn the Slayer.</li>
-                        <li><a href="https://github.com/v3yroz/Hash-Dictionaries-in-Cpp">Hash Dictionaries in cpp</a> -
-                            Słowniki haszujące w C++.</li>
-                        <li><a href="https://github.com/v3yroz/Longest-common-subsequence-in-Cpp">Longest common
-                                subsequence in cpp</a> -
-                            Algorytm szukający najdłuższego wspólnego podciągu znaków w C++.</li>
-                        <li><a href="https://github.com/v3yroz/Floyd-Warshall-algorithm-in-Cpp">Floyd Warshall algorithm
-                                in cpp</a> -
-                            Algorytm Floyda-Warshalla w C++.</li>
-                        <li><a href="https://github.com/v3yroz/Prim-s-Minimum-Spanning-Tree-algorithm-in-cpp">Primms
-                                Minimum Spanning Tree algorithm in cpp</a> -
-                            Algorytm Primma szukający najmniejszego drzewa rozpinającego w C++.</li>
-                        <li><a href="https://github.com/v3yroz/Hex-map">Hex map</a> -
-                            Projekt mapy heksagonalnej w Unity, uwzględniający współrzędne każdego kafelka.</li>
-                        <li><a href="https://github.com/v3yroz/Astar">Astar</a> -
-                            Projekt Unity polegający na algorytmie A* połączonym z generatorem świata na bazie szumu
-                            Perlina.</li>
-                        <li><a href="https://github.com/v3yroz/Moore">Moore</a> -
-                            Próba wykonania automatu Moore'a, lecz nie spełnia jeszcze wszystkich założeń.</li>
-                        <li><a href="https://github.com/v3yroz/RandomTerrain">Random Terrain</a> -
-                            Całkowicie losowy generator terenu w Unity.</li>
-                    </ul>
                 </div>
             </div>
         </div>
-
     </section>
 
+    <section id="education" class="py-20 bg-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Wykształcenie</h2>
+                <div class="h-1 w-20 bg-blue-500 mx-auto rounded-full"></div>
+            </div>
 
+            <div class="relative border-l border-gray-700 ml-4 md:ml-0 space-y-12">
+                
+                <div class="relative pl-8 md:pl-0 reveal">
+                    <div class="md:flex items-start justify-between group">
 
-    <section id="skills">
-        <h2>Umiejętności</h2>
-        <p>Posiadam zdolność analitycznego myślenia, podczas tworzenia projektów potrafię przewidzieć jakie rozwiązania
-            wydają się dobre jedynie na obecnym etapie, a w późniejszych okażą się nieoptymalne. Jestem otwarty na nowe
-            rozwiązania i z wielką chęcią chciałbym poznać ich jak najwięcej.</p>
-        <p>Programowanie</p>
-        <ul>
-            <li>C++ - znam składnię i potrafię zrozumieć kod, przeanalizować go i zaproponować poprawki.</li>
-            <li>C# - używałem podczas pisania skryptów do gier w Unity. Mój ulubiony język i znam go dość dobrze.</li>
-            <li>Java - użyłem podczas robienia pierwszej gry (na bibliotekach domyślnych oraz z wykorzystaniem LibGDX).
-            </li>
-            <li>javascript - nauczyłem się podstaw podczas tworzenia Tetrisa. Znam składnię i specyfikę działania.
-            </li>
-        </ul>
+                        <div class="absolute -left-[5px] top-2 md:left-auto md:right-[50%] md:mr-[-5px] h-3 w-3 rounded-full bg-blue-500 ring-4 ring-darker group-hover:ring-blue-500/30 transition-all z-10"></div>
+                        
 
-        <p>Inne</p>
-        <ul>
-            <li>Znam składnię HTML oraz CSS i potrafię stworzyć prostą stronę internetową.</li>
-            <li>Znam składnię SQL i potrafię zaprojektować bazę danych, utworzyć ją i dokonywać podstawowych operacji.
-            </li>
-            <li>Korzystałem ze środowisk takich jak: IntelliJ Idea, Visual Studio, Visual Studio Code, Unity,
-                Code::Blocks.</li>
-            <li>Potrafię obsługiwać programy: Blender, Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro, AutoCAD,
-                Adobe After Effects.</li>
-            <li>Znam podstawy działania sieci. Umiem zaplanować i utworzyć prostą sieć.</li>
-            <li>Posiadam umiejętności techniczne, np. złożenie komputera, wymiana części, zmiana pasty
-                termoprzewodzącej. Rozbierałem komputery, laptopy, telefony, a nawet karty graficzne. Potrafię dobrać
-                odpowiednie części komputerowe w zależności od potrzeb i jestem na bieżąco z nowymi technologiami.
-                Konstruowałem proste układy Arduino i je programowałem.</li>
-            <li>Posługuję się biegle językiem angielskim.</li>
-            <li>Posiadam prawo jazdy kategorii B oraz samochód.</li>
-        </ul>
+                        <div class="md:w-[45%] md:text-right mb-2 md:mb-0 md:pr-12">
+                            <h3 class="text-xl font-bold text-white">Magister Informatyki</h3>
+                            <span class="text-blue-400 text-sm font-semibold block">Uniwersytet Łódzki</span>
+                            <span class="text-gray-500 text-xs font-mono mt-1 block">W trakcie</span>
+                        </div>
+                        
+
+                        <div class="md:w-[45%] md:pl-12">
+                            <p class="text-gray-400 text-sm">
+                                Studia dzienne, specjalizacja: Interaktywne Media.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-0 reveal">
+                     <div class="md:flex items-start justify-between group">
+                        <div class="absolute -left-[5px] top-2 md:left-auto md:right-[50%] md:mr-[-5px] h-3 w-3 rounded-full bg-blue-500 ring-4 ring-darker group-hover:ring-blue-500/30 transition-all z-10"></div>
+                        
+                        <div class="md:w-[45%] md:text-right mb-2 md:mb-0 md:pr-12">
+                            <h3 class="text-xl font-bold text-white">Licencjat Informatyki</h3>
+                            <span class="text-blue-400 text-sm font-semibold block">Uniwersytet Łódzki</span>
+                            <span class="text-gray-500 text-xs font-mono mt-1 block">2021 - 2024</span>
+                        </div>
+                        
+                        <div class="md:w-[45%] md:pl-12">
+                            <p class="text-gray-400 text-sm">
+                                Studia dzienne, specjalizacja: Grafika i projektowanie gier.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Education Item 3 -->
+                 <div class="relative pl-8 md:pl-0 reveal">
+                    <div class="md:flex items-start justify-between group">
+                        <div class="absolute -left-[5px] top-2 md:left-auto md:right-[50%] md:mr-[-5px] h-3 w-3 rounded-full bg-blue-500 ring-4 ring-darker group-hover:ring-blue-500/30 transition-all z-10"></div>
+                        
+                        <div class="md:w-[45%] md:text-right mb-2 md:mb-0 md:pr-12">
+                            <h3 class="text-xl font-bold text-white">Technik Grafiki i Poligrafii Cyfrowej</h3>
+                            <span class="text-blue-400 text-sm font-semibold block">Technikum nr 1 w Łęczycy</span>
+                            <span class="text-gray-500 text-xs font-mono mt-1 block">2018 - 2021</span>
+                        </div>
+                        
+                        <div class="md:w-[45%] md:pl-12">
+                            <p class="text-gray-400 text-sm">
+                                Uzyskanie tytułu technika, kwalifikacje AU.54, AU.55.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p><a href="mailto:jakubkazm01@gmail.com">jakubkazm01@gmail.com</a></p>
-        <p><a href="tel:788-808-756">788 808 756</a></p>
-        <p><a href="https://github.com/v3yroz" target="_blank">GitHub</a></p>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Moje Projekty</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Tworzone samodzielnie i w zespole</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- WARIANT 1: Projekt BEZ LINKU -->
+                <div class="bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-blue-500/10 reveal">
+                    <div class="relative h-48 w-full group bg-gray-800">
+                        <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Private Project">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                             <h3 class="text-xl font-bold text-white">Internal Tool (NDA)</h3>
+                             <span class="bg-gray-700 text-gray-300 text-[10px] px-2 py-1 rounded border border-gray-600">Prywatny</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 h-20 overflow-hidden">
+                            Wewnętrzne narzędzie stworzone dla klienta korporacyjnego. Projekt objęty umową o zachowaniu poufności. Brak publicznego dostępu.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-500/10 text-blue-400 text-xs px-2 py-1 rounded">Java</span>
+                            <span class="bg-blue-500/10 text-blue-400 text-xs px-2 py-1 rounded">Spring Boot</span>
+                        </div>
+                        <div class="text-gray-500 text-sm italic mt-auto">Link niedostępny</div>
+                    </div>
+                </div>
+
+                <!-- WARIANT 2: Projekt Z LINKIEM -->
+                <div class="bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-purple-500/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/10 reveal delay-100">
+                    <div class="relative h-48 w-full group">
+                        <div class="flex overflow-x-auto snap-x snap-mandatory h-full w-full scrollbar-hide carousel-snap" id="carousel-2">
+                            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover flex-shrink-0 snap-center" alt="Img 1">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover flex-shrink-0 snap-center" alt="Img 2">
+                        </div>
+                         <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-purple-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" onclick="scrollCarousel('carousel-2', -1)">❮</button>
+                         <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-purple-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" onclick="scrollCarousel('carousel-2', 1)">❯</button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Aplikacja Finansowa</h3>
+                        <p class="text-gray-400 text-sm mb-4 h-20 overflow-hidden">
+                            Standardowy projekt z linkiem do sklepu lub demo.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-500/10 text-purple-400 text-xs px-2 py-1 rounded">Flutter</span>
+                            <span class="bg-purple-500/10 text-purple-400 text-xs px-2 py-1 rounded">Firebase</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors text-sm font-semibold">
+                            App Store <i class="fab fa-app-store-ios ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- WARIANT 3: Projekt Z LINKIEM I WSPÓŁAUTOREM -->
+                <div class="bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-green-500/50 transition-all duration-300 shadow-lg hover:shadow-green-500/10 reveal delay-200">
+                    <div class="relative h-48 w-full group">
+                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="IoT">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Open Source Lib</h3>
+                        <p class="text-gray-400 text-sm mb-4 h-20 overflow-hidden">
+                            Biblioteka Open Source stworzona wspólnie ze społecznością.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-500/10 text-green-400 text-xs px-2 py-1 rounded">TypeScript</span>
+                            <span class="bg-green-500/10 text-green-400 text-xs px-2 py-1 rounded">Node.js</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="inline-flex items-center text-green-400 hover:text-green-300 transition-colors text-sm font-semibold">
+                                GitHub Repo <i class="fab fa-github ml-2"></i>
+                            </a>
+                            <div class="text-xs text-gray-500 pt-2 border-t border-gray-700 mt-1">
+                                Współautor: <a href="#" class="text-gray-400 hover:text-white underline">@dev_mateusz</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- WARIANT 4: Projekt BEZ LINKU PROJEKTU, ALE ZE WSPÓŁAUTOREM -->
+                 <div class="bg-card rounded-xl overflow-hidden border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 shadow-lg hover:shadow-yellow-500/10 reveal">
+                    <div class="relative h-48 w-full group bg-gray-800 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-6xl text-gray-700"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">Gra GameJam</h3>
+                        <p class="text-gray-400 text-sm mb-4 h-20 overflow-hidden">
+                            Gra stworzona podczas 48h hackathonu. Serwery wyłączone, kod niedostępny publicznie.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-yellow-500/10 text-yellow-400 text-xs px-2 py-1 rounded">Unity</span>
+                            <span class="bg-yellow-500/10 text-yellow-400 text-xs px-2 py-1 rounded">C#</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <span class="text-gray-500 text-sm italic">Projekt zarchiwizowany</span>
+                            <div class="text-xs text-gray-500 pt-2 border-t border-gray-700 mt-1">
+                                Grafika: <a href="#" class="text-gray-400 hover:text-white underline">@art_anna</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Skontaktuj się</h2>
+                <p class="text-gray-400">Zachęcam do kontaktu :)</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8 reveal">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-500/10 p-3 rounded-lg text-blue-500">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-1">Email</h3>
+                            <p class="text-gray-400">jakubkazm01@gmail.com</p>
+                            <p class="text-gray-500 text-sm">Odpowiadam w ciągu 24h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-500/10 p-3 rounded-lg text-blue-500">
+                            <i class="fas fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-1">Telefon</h3>
+                            <p class="text-gray-400">+48 788 808 756</p>
+                            <p class="text-gray-500 text-sm">Dostępny praktycznie całodobowo</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-500/10 p-3 rounded-lg text-blue-500">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-1">Lokalizacja</h3>
+                            <p class="text-gray-400">Łęczyca, Łódzkie, Polska</p>
+                            <p class="text-gray-500 text-sm">Dostępny zdalnie na całym świecie</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 flex space-x-4">
+                        <a href="https://github.com/v3yroz" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-card p-8 rounded-2xl border border-gray-700 shadow-xl reveal delay-100">
+                    <form onsubmit="event.preventDefault(); alert('Wiadomość wysłana (demo)!');" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Imię i Nazwisko</label>
+                            <input type="text" class="w-full bg-darker border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="Barry Allen">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                            <input type="email" class="w-full bg-darker border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="barry@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Wiadomość</label>
+                            <textarea rows="4" class="w-full bg-darker border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors" placeholder="Cześć, kontaktuję się w sprawie..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 px-4 rounded-lg transition-all transform hover:-translate-y-1 shadow-lg">
+                            Wyślij wiadomość
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darker py-8 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 Jakub Kaźmierczak. Wszelkie prawa zastrzeżone.
+        </p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
 
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.style.background = 'rgba(15, 23, 42, 0.9)';
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+            }
+        });
+
+        function scrollCarousel(id, direction) {
+            const container = document.getElementById(id);
+            if(container) {
+                const scrollAmount = container.clientWidth;
+                container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
 </html>
